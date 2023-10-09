@@ -1,0 +1,66 @@
+#main-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	margin: 0 auto;
+	z-index: 100;
+	font-size: 1.3rem;
+	transition: all 0.7s ease;
+
+	.container {
+		@include flex(space-between);
+		.logo {
+			width: 150px;
+			padding: 1.2rem 2rem;
+
+			a {
+				&:hover {
+					@include link-hover(transparent);
+					transition: none;
+				}
+
+				img {
+					width: 100%;
+					transition: transform 0.3s ease;
+					&:hover {
+						transform: scale(0.95);
+					}
+				}
+			}
+		}
+
+		.nav-container {
+			ul {
+				@include flex(center);
+
+				li a {
+					padding: 1rem;
+				}
+			}
+		}
+
+		.hamburger a {
+			padding: 1rem;
+			display: none;
+
+			&:hover {
+				border-bottom: none;
+			}
+		}
+
+		.nav-contact {
+			padding: 2rem;
+			a {
+				border-bottom: none;
+			}
+			i {
+				margin-right: 0.5rem;
+			}
+
+			span {
+				color: $secondary-color ;
+			}
+		}
+	}
+}

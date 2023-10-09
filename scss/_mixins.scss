@@ -1,0 +1,37 @@
+@mixin flex($justify-content) {
+	display: flex;
+	justify-content: $justify-content;
+	align-items: center;
+	text-align: center;
+}
+
+@mixin link-hover($color) {
+	color: $color;
+	border-bottom: 1px solid $color;
+}
+
+@mixin img-overlay($opacity) {
+	content: "";
+	background: $primary-color;
+	opacity: $opacity;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+@mixin bottom-line($width) {
+	height: 2px;
+	width: $width;
+	background-color: $secondary-color;
+	display: block;
+	margin: 0 auto 1rem auto;
+}
+
+@mixin home-sections-settings {
+	color: #000;
+	i {
+		margin: 0.7rem;
+	}
+}

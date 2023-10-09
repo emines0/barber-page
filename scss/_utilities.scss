@@ -1,0 +1,144 @@
+.bottom-line {
+ @include bottom-line(6rem);
+}
+
+/* Utilities */
+.container {
+ max-width: $website-width;
+ padding: 0 1.5rem;
+ margin: auto;
+ overflow: hidden;
+
+}
+
+/* Buttons */
+%btn-shared {
+ display: inline-block;
+ padding: 0.8rem 2rem;
+ transition: all 0.5s;
+ border: none;
+ border-radius: 6px;
+ cursor: pointer;
+}
+
+.btn {
+ &-primary {
+  @extend %btn-shared;
+  color: set-text-color($primary-color);
+  background: $primary-color;
+ }
+ &-secondary {
+  @extend %btn-shared;
+  color: set-text-color($secondary-color);
+  background: $secondary-color;
+ }
+ &-light {
+  @extend %btn-shared;
+  color: set-text-color($light-color);
+  background: $light-color;
+ }
+ &-dark {
+  @extend %btn-shared;
+  color: set-text-color($dark-color);
+  background: $dark-color;
+ }
+}
+
+button[class^="btn-"]:hover,
+a[class^="btn-"]:hover,
+input[class^="btn-"]:hover,
+button[class^="btn-"]:focus,
+a[class^="btn-"]:focus,
+input[class^="btn-"]:focus {
+ background: $secondary-color;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+ color: set-text-color($primary-color);
+ background: $primary-color;
+}
+
+// Backgrounds
+
+.bg {
+ &-primary {
+  background: $primary-color;
+  color: set-text-color($primary-color);
+ }
+
+ &-secondary {
+  background: $secondary-color;
+  color: set-text-color($secondary-color);
+ }
+
+ &-dark {
+  background: $dark-color;
+  color: set-text-color($dark-color);
+ }
+
+ &-light {
+  background: $light-color;
+  color: set-text-color($light-color);
+ }
+
+ &-medium {
+  background: $medium-color;
+  color: set-text-color($medium-color);
+ }
+}
+
+.lead {
+ font-size: 1.3rem;
+ margin-bottom: 2rem;
+}
+
+.text-center {
+ text-align: center;
+}
+
+.section-title {
+ font-size: 2rem;
+ display: block;
+ padding-bottom: 0.5rem;
+ text-align: center;
+ font-weight: 100;
+ text-transform: capitalize;
+}
+
+.top {
+ background: rgba($color: #000000, $alpha: 0.9);
+ box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.7);
+}
+
+// Padding
+.py {
+ &-1 {
+  padding: 1rem 0;
+ }
+ &-2 {
+  padding: 2rem 0;
+ }
+ &-3 {
+  padding: 3rem 0;
+ }
+ &-4 {
+  padding: 4rem 0;
+ }
+}
+
+// Margin
+.my {
+ &-1 {
+  margin: 1rem 0;
+ }
+ &-2 {
+  margin: 2rem 0;
+ }
+ &-3 {
+  margin: 3rem 0;
+ }
+ &-4 {
+  margin: 4rem 0;
+ }
+}

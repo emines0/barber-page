@@ -1,0 +1,61 @@
+// Imports
+@import "variables";
+@import "functions";
+@import "mixins";
+@import "utilities";
+@import "item_grid";
+
+// Generals
+*,
+html {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $primary-font;
+	font-weight: normal;
+	background: #fff;
+	color: $light-color;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: $light-color;
+	transition: all 0.5s ease;
+	cursor: pointer;
+
+	&:hover {
+		@include link-hover($secondary-color);
+	}
+}
+
+img {
+	width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 0;
+	text-transform: capitalize;
+}
+
+h1 {
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size: 4rem;
+}
+
+@import "_partials/navigation";
+@import "_pages/homepage";
