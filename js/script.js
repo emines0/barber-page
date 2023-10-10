@@ -35,7 +35,7 @@ $('#main-nav a, .btn').on('click', function (e) {
 function linkClick(e) {
     navLinks.forEach((link) => {
         link.addEventListener('click', () => {
-            navigation.classList.add = 'd-none'
+            navigation.style.display = 'none'
             navReservation.style.display = 'none'
             menuBtn.style.display = 'block'
             closeBtn.style.display = 'none'
