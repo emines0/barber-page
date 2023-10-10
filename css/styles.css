@@ -273,54 +273,71 @@ h1 {
   font-size: 1.3rem;
   transition: all 0.7s ease;
 }
-#main-nav .container {
-  display: flex;
-  justify-content: space-between;
+#main-nav .navigation {
+  display: grid;
+  grid-template-areas: "logo hamburger items reservation";
   align-items: center;
-  text-align: center;
+  justify-content: space-between;
 }
-#main-nav .container .logo {
+#main-nav .navigation .logo {
+  grid-area: logo;
   width: 150px;
   padding: 1.2rem 2rem;
 }
-#main-nav .container .logo a:hover {
+#main-nav .navigation .logo a:hover {
   color: transparent;
   border-bottom: 1px solid transparent;
   transition: none;
 }
-#main-nav .container .logo a img {
+#main-nav .navigation .logo a img {
   width: 100%;
   transition: transform 0.3s ease;
 }
-#main-nav .container .logo a img:hover {
+#main-nav .navigation .logo a img:hover {
   transform: scale(0.95);
 }
-#main-nav .container .nav-container ul {
+#main-nav .navigation .nav-container {
+  grid-area: items;
+}
+#main-nav .navigation .nav-container ul {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-#main-nav .container .nav-container ul li a {
+#main-nav .navigation .nav-container ul li a {
   padding: 1rem;
 }
-#main-nav .container .hamburger a {
+#main-nav .navigation .hamburger {
+  grid-area: hamburger;
+}
+#main-nav .navigation .hamburger i {
+  grid-area: hamburger;
   padding: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+#main-nav .navigation .hamburger i:hover {
+  color: #b00000;
+  border-bottom: none;
+}
+#main-nav .navigation .hamburger .fa-bars {
   display: none;
 }
-#main-nav .container .hamburger a:hover {
-  border-bottom: none;
+#main-nav .navigation .hamburger .fa-close {
+  display: none;
 }
-#main-nav .container .nav-contact {
+#main-nav .navigation .nav-reservation {
+  grid-area: reservation;
   padding: 2rem;
 }
-#main-nav .container .nav-contact a {
+#main-nav .navigation .nav-reservation a {
   border-bottom: none;
 }
-#main-nav .container .nav-contact i {
+#main-nav .navigation .nav-reservation i {
   margin-right: 0.5rem;
 }
-#main-nav .container .nav-contact span {
+#main-nav .navigation .nav-reservation span {
   color: #b00000;
 }
 
@@ -519,4 +536,95 @@ h1 {
 }
 #main-footer .socials a:hover {
   border-bottom: none;
+}
+
+@media (max-width: 960px) {
+  #main-nav {
+    background: black;
+  }
+  #main-nav .navigation {
+    grid-template-areas: "logo logo logo hamburger" "items items items items" "reservation reservation reservation reservation" !important;
+    align-items: center;
+  }
+  #main-nav .navigation .nav-container {
+    display: none;
+  }
+  #main-nav .navigation .nav-container ul {
+    flex-direction: column;
+  }
+  #main-nav .navigation .nav-container ul li {
+    padding: 1.3rem;
+    border-bottom: 1px solid #b00000;
+    width: 75%;
+  }
+  #main-nav .navigation .nav-container ul li a:hover, #main-nav .navigation .nav-container ul li a:focus {
+    border-bottom: none;
+  }
+  #main-nav .navigation .nav-reservation {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #main-nav .navigation .hamburger .fa-bars {
+    display: inline-block;
+  }
+  #main-nav .navigation .hamburger .fa-close {
+    display: none;
+  }
+  .hero .content h1 {
+    font-size: 2rem;
+    padding-bottom: 1.2rem;
+  }
+  .hero .content p {
+    max-width: 400px;
+  }
+  .home-services .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home-services .items .item {
+    max-height: 240px;
+  }
+  .home-about .about-container {
+    grid-template-columns: 1fr;
+  }
+  .home-testimonials .testimonials-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+  }
+}
+@media (max-width: 500px) {
+  .home-services .items {
+    max-width: 85%;
+    margin: 0 auto;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .home-services .items .item {
+    max-height: 185px;
+  }
+  .home-about .about-container {
+    max-width: 85%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+  }
+  .home-about .about-container p {
+    font-size: 1.1rem;
+  }
+  .home-options .options-container {
+    max-width: 85%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+  }
+  .home-options .options-container div {
+    border-right: none;
+    border-bottom: 1px solid #b00000;
+  }
+  .home-options .options-container div:last-child {
+    border-bottom: none;
+  }
+  .home-testimonials .testimonials-container {
+    max-width: 85%;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0 auto;
+  }
 }

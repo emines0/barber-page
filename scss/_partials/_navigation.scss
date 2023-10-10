@@ -8,11 +8,18 @@
 	font-size: 1.3rem;
 	transition: all 0.7s ease;
 
-	.container {
-		@include flex(space-between);
+	.navigation {
+			display: grid;
+			grid-template-areas: 'logo hamburger items reservation';
+			align-items: center;
+			justify-content: space-between;
+
+
 		.logo {
+			grid-area: logo;
 			width: 150px;
 			padding: 1.2rem 2rem;
+
 
 			a {
 				&:hover {
@@ -31,6 +38,10 @@
 		}
 
 		.nav-container {
+		grid-area: items;
+	
+
+
 			ul {
 				@include flex(center);
 
@@ -40,16 +51,34 @@
 			}
 		}
 
-		.hamburger a {
+		.hamburger {
+		grid-area: hamburger;
+		
+		i {
+			grid-area: hamburger;
 			padding: 1rem;
-			display: none;
+			cursor: pointer;
+			transition: color 0.3s ease;
 
 			&:hover {
+				color: $secondary-color;
 				border-bottom: none;
 			}
 		}
 
-		.nav-contact {
+					.fa-bars {
+				display: none;
+			}
+
+			.fa-close {
+				display: none;
+			}
+	}
+
+		.nav-reservation {
+		grid-area: reservation;
+
+
 			padding: 2rem;
 			a {
 				border-bottom: none;
