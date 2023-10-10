@@ -127,6 +127,22 @@ input[class^=btn-]:focus {
   margin: 4rem 0;
 }
 
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
 .items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -291,13 +307,14 @@ h1 {
 }
 #main-nav .navigation .logo a img {
   width: 100%;
-  transition: transform 0.3s ease;
+  transition: color 0.3s ease;
 }
 #main-nav .navigation .logo a img:hover {
   transform: scale(0.95);
 }
 #main-nav .navigation .nav-container {
   grid-area: items;
+  transition: all 2s ease;
 }
 #main-nav .navigation .nav-container ul {
   display: flex;
@@ -329,6 +346,7 @@ h1 {
 }
 #main-nav .navigation .nav-reservation {
   grid-area: reservation;
+  transition: all 2s ease;
   padding: 2rem;
 }
 #main-nav .navigation .nav-reservation a {
@@ -538,7 +556,7 @@ h1 {
   border-bottom: none;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1170px) {
   #main-nav {
     background: black;
   }
@@ -580,31 +598,37 @@ h1 {
     max-width: 400px;
   }
   .home-services .items {
+    max-width: 85%;
+    margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
   }
   .home-services .items .item {
     max-height: 240px;
   }
   .home-about .about-container {
+    max-width: 85%;
+    margin: 0 auto;
     grid-template-columns: 1fr;
   }
+  .home-contact form {
+    max-width: 85%;
+    margin: 0 auto;
+  }
   .home-testimonials .testimonials-container {
+    max-width: 85%;
+    margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 3rem;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .home-services .items {
-    max-width: 85%;
-    margin: 0 auto;
     grid-template-columns: repeat(1, 1fr);
   }
   .home-services .items .item {
     max-height: 185px;
   }
   .home-about .about-container {
-    max-width: 85%;
-    margin: 0 auto;
     grid-template-columns: 1fr;
   }
   .home-about .about-container p {
@@ -623,8 +647,6 @@ h1 {
     border-bottom: none;
   }
   .home-testimonials .testimonials-container {
-    max-width: 85%;
     grid-template-columns: repeat(1, 1fr);
-    margin: 0 auto;
   }
 }

@@ -27,7 +27,10 @@
 
 .home {
 
-	&-services, &-about, &-contact, &-testimonials {
+	&-services,
+	&-about,
+	&-contact,
+	&-testimonials {
 		i {
 			color: $secondary-color
 		}
@@ -41,6 +44,7 @@
 			color: $secondary-color
 		}
 	}
+
 	&-about {
 		@include home-sections-settings;
 
@@ -58,13 +62,16 @@
 					@include img-overlay(0.3);
 				}
 			}
+
 			.about-text {
 				text-align: justify;
 			}
 		}
 	}
+
 	&-contact {
 		@include home-sections-settings;
+
 		.text-fields {
 			display: grid;
 			grid-template-areas:
@@ -75,19 +82,24 @@
 			grid-gap: 1.2rem;
 			margin-bottom: 1.2rem;
 		}
+
 		//  Grid Areas
 		.name-input {
 			grid-area: name;
 		}
+
 		.subject-input {
 			grid-area: subject;
 		}
+
 		.email-input {
 			grid-area: email;
 		}
+
 		.phone-input {
 			grid-area: phone;
 		}
+
 		.message-input {
 			grid-area: message;
 			height: 100px;
@@ -114,6 +126,7 @@
 			border: 1px solid $secondary-color;
 		}
 	}
+
 	&-options {
 		color: $primary-color;
 
@@ -131,7 +144,7 @@
 				cursor: pointer;
 
 				&:hover,
-				&:hover > a {
+				&:hover>a {
 					color: $secondary-color;
 					border-bottom: none;
 				}
@@ -144,18 +157,22 @@
 					transition: all 0.5 ease;
 					padding: 2rem 0;
 				}
+
 				a {
 					color: $dark-color;
 				}
 			}
 		}
 	}
+
 	&-testimonials {
 		@include home-sections-settings;
+
 		.testimonials-container {
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			grid-gap: 0.5rem;
+
 			p {
 				border: 1px solid $dark-color;
 				border-radius: 5px;
@@ -163,6 +180,7 @@
 				text-align: left;
 				line-height: 1.5;
 			}
+
 			ul {
 				list-style: none;
 				margin-top: 1rem;
@@ -176,25 +194,6 @@
 					margin-right: 0.5rem;
 				}
 			}
-		}
-	}
-}
-
-#main-footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	text-align: center;
-	padding: 2rem;
-
-	.socials {
-		display: flex;
-		font-size: 1.8rem;
-		a {
-					margin-right: 1.2rem;
-					&:hover {
-						border-bottom: none;
-					}
 		}
 	}
 }

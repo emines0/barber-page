@@ -1,5 +1,11 @@
 {
  "liveServer.settings.port": 5501,
  "editor.defaultFormatter": "mblode.pretty-formatter",
- "editor.formatOnSave": true
+ "editor.formatOnSave": true,
+ "[html]": {
+  "editor.defaultFormatter": "vscode.html-language-features"
+ },
+ "[scss]": {
+  "editor.defaultFormatter": "vscode.css-language-features"
+ }
 }
